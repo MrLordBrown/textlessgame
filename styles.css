@@ -1,0 +1,124 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  font-size: calc(16px + (26 - 16) * ((100vw - 300px) / (1600 - 300)));
+  justify-content: center;
+  margin-bottom: 2em;
+  background: #000;
+  color: #fff;
+  min-height: 5vh;
+  text-align: center;
+}
+
+#ui {
+  display: grid;
+  grid-template-areas: "nw . n . ne"
+                          ". p p p ."
+                          "w p p p e"
+                          ". p p p ."
+                          "sw . s . se";
+  grid-gap: 1vw;
+  grid-template-columns: repeat(5, 19vw);
+  grid-template-rows: repeat(5,17vh);
+  align-items: center;
+  justify-items: center;
+  background-color: black;
+  z-index: -1;
+  }
+
+
+#nw {
+  z-index: 1;
+  display: block;
+  grid-area: nw;
+  background-color: white;
+  background-size: contain;
+}
+
+#ne {
+  grid-area: ne;
+}
+
+#n {
+  grid-area: n;
+}
+#sw {
+  grid-area: sw;
+}
+
+#se {
+  grid-area: se;
+}
+
+#s {
+  grid-area: s;
+}
+
+#e {
+  grid-area: w;
+}
+
+#w {
+  grid-area: e;
+}
+
+#p {
+  grid-area: p;
+}
+
+
+#w1 {
+  background-color: red;
+}
+li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  margin-left: 0;
+  font-size: calc(16px + (21 - 16) * ((100vw - 300px) / (1600 - 300)));
+}
+
+ul.weekdays {
+  margin-bottom: 1em;
+}
+
+ul.weekdays li {
+  height: 4vw;
+}
+
+ol.day-grid li {
+
+  border: 1px solid #eaeaea;
+  height: 12vw;
+  max-height: 125px;
+}
+
+ul.weekdays abbr[title] {
+  border: none;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+
+
+@media all and (max-width: 800px) {
+  ul, ol {
+    grid-gap: .25em;
+  }
+  
+  ul.weekdays li {
+    font-size: 0;
+  }
+  
+  ul.weekdays > li abbr:after {
+      content: attr(title);
+      font-size: calc(16px + (26 - 16) * ((100vw - 300px) / (1600 - 300)));
+    text-align: center;
+    }
+}
